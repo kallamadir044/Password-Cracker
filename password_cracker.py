@@ -16,6 +16,7 @@ def main():
             dictionary = [line.strip() for line in f.readlines()]
         password = dictionary_attack(args.hash_value, dictionary)
     elif args.mode == 'brute-force' and args.charset:
+        print(f"Attempting brute-force attack with charset: {args.charset}, max length: {args.max_length}")
         password = brute_force_attack(args.hash_value, args.charset, args.max_length)
     else:
         print("Invalid mode or missing required arguments.")
